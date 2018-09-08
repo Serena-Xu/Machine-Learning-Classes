@@ -144,7 +144,7 @@ initial_nn_params = [initial_Theta1(:) ; initial_Theta2(:)];
 fprintf('\nChecking Backpropagation... \n');
 
 %  Check gradients by running checkNNGradients
-checkNNGradients;
+%%checkNNGradients
 
 fprintf('\nProgram paused. Press enter to continue.\n');
 pause;
@@ -158,8 +158,8 @@ pause;
 fprintf('\nChecking Backpropagation (w/ Regularization) ... \n')
 
 %  Check gradients by running checkNNGradients
-lambda = 3;
-checkNNGradients(lambda);
+%lambda = 3;
+%%checkNNGradients(lambda);
 
 % Also output the costFunction debugging values
 debug_J  = nnCostFunction(nn_params, input_layer_size, ...
@@ -196,7 +196,7 @@ costFunction = @(p) nnCostFunction(p, ...
 
 % Now, costFunction is a function that takes in only one argument (the
 % neural network parameters)
-[nn_params, cost] = fmincg(costFunction, initial_nn_params, options);
+x
 
 % Obtain Theta1 and Theta2 back from nn_params
 Theta1 = reshape(nn_params(1:hidden_layer_size * (input_layer_size + 1)), ...
